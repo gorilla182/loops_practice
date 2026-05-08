@@ -8,6 +8,11 @@ class Loops:
             else:
                 print(n)
 
+    def task2(self):
+        words = [f"str{i}" for i in range(10)]
+        for word in words:
+            print(word, sep=', ')
+
 
 
 if __name__ == "__main__":
