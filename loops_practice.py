@@ -14,7 +14,7 @@ class Loops:
             if n != Loops.TARGET:
                 print(n)
             else:
-                print(n)
+                break
 
     def task2(self):
         words = [f"str{i}" for i in range(10)]
@@ -34,4 +34,7 @@ class Loops:
 
 
 if __name__ == "__main__":
-    pass
+    task = Loops()
+    task.task1()
+    task.task2()
+    task.task3()
