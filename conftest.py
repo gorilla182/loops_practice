@@ -11,3 +11,11 @@ def open_page(page: Page):
 @pytest.fixture                         # ← добавь эту фикстуру
 def login_page(page: Page) -> LoginPage:
     return LoginPage(page)
+
+@pytest.fixture(scope="session")
+def browser_context_args(browser_context_args):
+    return {
+        **browser_context_args,
+        "permissions": [],
+        "locale": "en-US",
+    }
