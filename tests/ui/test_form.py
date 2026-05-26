@@ -2,11 +2,17 @@ from pages.HomePage import HomePage
 from pages.ContactSalesPage import ContactSalesPage
 from pages.CiCdPage import CiCdPage
 from pages.SolutionsPage import SolutionsPage
+from pages.login_page import LoginPage
 import pytest
 from playwright.sync_api import *
 from config import *
 
-@pytest.mark.smoke
+@pytest.mark.ui
+def test_login_success(login_page: LoginPage, open_page):
+    login_page.login()
+    expect(login_page.avatar).to_be_visible()
+
+@pytest.mark.ui
 def test_form(page: Page, open_page):
     home = HomePage(page)
     solutions = SolutionsPage(page)
@@ -19,3 +25,5 @@ def test_form(page: Page, open_page):
     contact_sales_page.open_form()
     contact_sales_page.fill_form(FIRSTNAME,LASTNAME, COMPANY, JOB_TITLE, EMAIL)
     contact_sales_page.check_filled_form(FIRSTNAME, LASTNAME, COMPANY, JOB_TITLE, EMAIL)
+
+
