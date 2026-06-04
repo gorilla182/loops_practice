@@ -1,4 +1,4 @@
-from models.models import Product, ProductData
+from models.models import Product, ProductData, UserData
 
 def macbook() -> Product:
     return Product(
@@ -9,4 +9,10 @@ def macbook() -> Product:
             year=2019,
             price=1849.99
         )
+    )
+
+def user_data(username, password):
+    return UserData(
+        email=username,
+        password=password
     )

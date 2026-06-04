@@ -11,3 +11,9 @@ class ProductData(BaseModel):
 class Product(BaseModel):
     name: str
     data: ProductData
+
+class UserData(BaseModel):
+    email: str
+    password: str
+
+    model_config = {'populate_by_name': True}
