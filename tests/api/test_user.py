@@ -2,6 +2,7 @@
 import requests
 import pytest
 from clients.api_client import UserClient
+
 def test_register_user(register_new_user):
     response = register_new_user.json()
     assert 'token' in response
